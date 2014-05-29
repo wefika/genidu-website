@@ -4,13 +4,13 @@
 //	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 //
 
-@mixin vendor-property($property, $value) { 
+@mixin vendor-property($property, $value) {
     @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '') {
         #{$vendor}#{$property}: #{$value};
     }
 }
 
-@mixin vendor-value($property, $value) { 
+@mixin vendor-value($property, $value) {
     @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '') {
         #{$property}: #{$vendor}#{$value};
     }
@@ -41,7 +41,8 @@
 	}
 
 	#bg {
-		background-size: $width auto;
-		width: ($width * 3);
+    background-size: cover;
+    background-position: center;
+		width: 100%;
 	}
 }

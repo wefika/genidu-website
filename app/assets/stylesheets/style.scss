@@ -65,9 +65,6 @@
 /* BG */
 
 	#bg {
-		@include vendor-property('animation', 'bg #{$duration-bg} linear infinite');
-		@include vendor-property('backface-visibility', 'hidden');
-		@include vendor-property('transform', 'translate3d(0,0,0)');
 		background-color: #348cb2;
 		background-image: image-url('bg.jpg');
 		background-position: bottom left;
@@ -94,7 +91,6 @@
 		background-image: url('images/overlay-pattern.png'), url('images/overlay.svg');
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
-		background-size: auto, cover;
 		height: 100%;
 		left: 0;
 		opacity: 0;
