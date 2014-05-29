@@ -18,3 +18,8 @@
 /.powrc
 /.ruby-gemset*
 /.ruby-version*
+
+/.env
+/.env*
+/deployment
+/deployment/*
