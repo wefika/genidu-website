@@ -15,3 +15,21 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+.clearfix {
+  clear: both;
+}
+
+.product-desc {
+  float: left;
+  width: 30%;
+}
+
+.image {
+
+}
+
+.basic-data {
+  float: left;
+  width: 70%;
+}

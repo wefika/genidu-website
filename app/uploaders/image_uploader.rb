@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :icon do
-    process :resize_to_fill => [50, 50]
+    process :resize_to_fill => [150, 150]
     # process :convert => 'jpg'
     # process :quality => 80
 
