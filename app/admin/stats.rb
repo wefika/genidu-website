@@ -19,7 +19,7 @@ ActiveAdmin.register_page "Stats" do
         end
 
         panel "Geo stats" do
-          div geo_chart(product.geo_chart_data)
+          div geo_chart(product.geo_chart_data, height: "700px")
           div pie_chart(product.pie_chart_data)
         end
       end
