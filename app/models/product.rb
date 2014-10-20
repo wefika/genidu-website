@@ -11,6 +11,12 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def self.daily n=1
+    (1..30).to_a.reverse.map{|x|
+      [x.days.ago, Random.rand(scale*n)]
+    }
+  end
+
   def self.unique_chart_data n=1
     uniq = Random.rand(scale*5*n)
     {

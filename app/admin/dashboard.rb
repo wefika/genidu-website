@@ -18,6 +18,9 @@ ActiveAdmin.register_page "Dashboard" do
     end
     columns do
       column do
+        panel "Daily scans" do
+          line_chart Product.daily(Product.count)
+        end
         panel "Product" do
           div javascript_include_tag "//www.google.com/jsapi", "chartkick"
           div column_chart(Product.unique_chart_data(Product.count))
