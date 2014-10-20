@@ -14,13 +14,13 @@ ActiveAdmin.register_page "Stats" do
             div image_tag(product.image, height: 200), class: 'image'
           end
 
-          div column_chart(product.unique_chart_data), class: 'basic-data'
+          div column_chart(Product.unique_chart_data), class: 'basic-data'
           div class: 'clearfix'
         end
 
         panel "Geo stats" do
-          div geo_chart(product.geo_chart_data, height: "700px")
-          div pie_chart(product.pie_chart_data)
+          div geo_chart(Product.geo_chart_data, height: "700px")
+          div pie_chart(Product.pie_chart_data)
         end
       end
 

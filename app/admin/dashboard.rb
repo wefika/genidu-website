@@ -5,13 +5,6 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        # panel "Recent Posts" do
-        #   ul do
-        #     Post.recent(5).map do |post|
-        #       li link_to(post.title, admin_post_path(post))
-        #     end
-        #   end
-        # end
         panel "Something" do
           div javascript_include_tag "//www.google.com/jsapi", "chartkick"
           # div line_chart(Product.group(:created_at).count)
@@ -22,12 +15,20 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+    end
+    columns do
+      column do
+        panel "Product" do
+          div javascript_include_tag "//www.google.com/jsapi", "chartkick"
+          div column_chart(Product.unique_chart_data(Product.count))
+          div class: 'clearfix'
+        end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
+        panel "Geo stats" do
+          div geo_chart(Product.geo_chart_data(Product.count), height: "700px")
+          div pie_chart(Product.pie_chart_data(Product.count))
+        end
+      end
 
     end
   end # content

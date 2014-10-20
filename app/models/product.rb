@@ -11,25 +11,25 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  def unique_chart_data
-    uniq = Random.rand(scale*5)
+  def self.unique_chart_data n=1
+    uniq = Random.rand(scale*5*n)
     {
       "Unique users" => uniq,
-      "All scans" => (uniq*2 + Random.rand(scale*5))
+      "All scans" => (uniq*2 + Random.rand(scale*5*n))
     }
   end
 
-  def geo_chart_data
+  def self.geo_chart_data n=1
     countries = %w(UK France Italy Germany USA China Autralia)
-    countries.map{|c| [c, Random.rand(scale)]}
+    countries.map{|c| [c, Random.rand(scale*n)]}
   end
 
-  def pie_chart_data
+  def self.pie_chart_data n=1
     countries = %w(Americans Chinese British French Italians Germans Austrians)
-    countries.map{|c| [c, Random.rand(scale)]}
+    countries.map{|c| [c, Random.rand(scale*n)]}
   end
 
-  def scale
+  def self.scale
     @scale ||= ENV['scale'] || 1000
   end
 
