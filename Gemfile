@@ -18,6 +18,9 @@ gem 'asset_sync'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin' # Admin panel
 
+gem 'fog'
 gem 'carrierwave' # Uploading images
 gem 'mini_magick' # Processing images
 
+gem 'chartkick'
+gem 'groupdate'
