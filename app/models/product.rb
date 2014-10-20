@@ -9,4 +9,6 @@ class Product < ActiveRecord::Base
   # manufacturer
   #
 
+  mount_uploader :image, ImageUploader
+
 end
