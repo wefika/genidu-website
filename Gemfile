@@ -14,5 +14,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'asset_sync'
+gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin' # Admin panel
 gem 'carrierwave'
