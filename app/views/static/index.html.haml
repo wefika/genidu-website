@@ -1,0 +1,143 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %link{:href => "/favicon.png", :rel => "shortcut icon"}
+    %title Genidu
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"}
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+  %body{"data-offset" => "0", "data-spy" => "scroll", "data-target" => "#navbar-main"}
+    #navbar-main
+      / Fixed navbar
+      .navbar.navbar-inverse.navbar-fixed-top
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.glyphicon.glyphicon-align-justify{:style => "font-size:28px; color:#d5d0ca ;"}
+            %a.navbar-brand{:href => "#"}
+              = image_tag "g_logo.png"
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                %a.smoothScroll{:href => "#solution"} SOLUTION
+              %li
+                %a.smoothScroll{:href => "#technology"} TECHNOLOGIE
+              %li
+                = link_to enter_path do
+                  .smoothScroll ENTERPICE
+              %li
+                %a.smoothScroll{:href => "#contact"} CONTACT
+          / /.nav-collapse
+    / ==== HEADERWRAP ====
+    #headerwrap{:name => "home"}
+      %header.clearfix
+        %p
+          Luttez contre la contrefaçon
+          %br/
+          en utilisant un produit
+          %br/
+          simple et non duplicable.
+    / /headerwrap
+    / ==== GREYWRAP ====
+    #greywrap
+      .row
+        %h1.centered Notre société
+        %p
+          GENIDU est une société américaine qui développe une solution complète pour les entreprises souhaitant protéger leurs produits contre la copie et la contrefaçon.
+          GENIDU est composé de cinq experts et ingénieurs pouvant répondre à vos demandes et qui assurent un support permanent à nos produits.
+      / row
+    / greywrap
+    / ==== SOLUTION ====
+    #solution.container{:name => "solution"}
+      .row.white
+        %br/
+        %h1.centered LA SOLUTION
+        %hr/
+        .row.text-center
+          = image_tag "chip.png"
+        .col-lg-offset-2.col-lg-8
+          %p
+            Une puce – partie principale de la solution – est montée sur le produit final ou sur l’emballage du produit.
+            Le consommateur place son Smartphone à proximité du produit, et reçoit en temps réel un message lui indiquant la provenance du produit. Son ADN…
+          .row.text-center
+            = image_tag "bottle.png"
+          %p …Mais aussi des conseils sur la consommation du produit, l’historique du produit, l’historique du fabriquant et une multitude d’autres informations permettant à GENIDU d‘être la parfaite interface entre le fabriquant et le consommateur.
+        / col-lg-6
+      / container
+      .row.white
+        %br/
+        %h1.centered POURQUOI?
+        %hr/
+        .col-lg-offset-2.col-lg-8
+          %p
+            En plus de la sécurisation, GENIDU permet d’être une interface qui optimise, à la demande du fabriquant, la consommation ou l’utilisation du produit.
+          %p
+            GENIDU vous offre en plus de la sécurisation, un nouveau canal  de communication direct avec les consommateurs ou utilisateurs, afin d’accroitre vos ventes.
+            %br/
+            Plus de doutes sur l’authenticité des produits et valorisation de votre marque.
+          %p
+            Optimisez votre logistique et empêchez l’apparition de marchés parallèles et de contrefaçons en établissant une chaine de confiance de la production à la consommation ou l’utilisation de votre produit grâce à nos services de traçabilités et de sécurités.
+      / container
+      / ==== technology ====
+      #technology.container{:name => "technology"}
+        %br/
+        %br/
+        .row.white
+          %h1.centered TECHNOLOGIE
+          %hr/
+          %br/
+          .col-lg-offset-2.col-lg-8
+            %p
+              Le Near Field Communication promet d’échanger les données entre votre produit et n’importe quel terminal équipé d’un lecteur NFC.
+              Ainsi, la principale caractéristique de la technologie NFC est la suivante: Elle est automatique!
+              %br/
+              Il n'est pas nécessaire de lancer une application !!!
+      .row.white
+        %h1.centered COMMENT?
+        %hr/
+        .col-lg-offset-2.col-lg-8
+          %p
+            Lorsque vous êtes à proximité du produit, le mobile contacte les serveurs sécurisés GENIDU, qui sont localisés dans 3 endroits dans le monde.
+            GENIDU recherche le produit et retourne sur l’écran de votre Smartphone une photo du produit et le message d’authenticité.
+            En plus de l’authentification de votre produit, GENIDU transfére l’intégralité des données que souhaite communiquer le fabriquant.
+          %br/
+          .row.center
+            = image_tag "iphone.png", class: 'img-responsive'
+        / col
+      / row
+    / container
+    #contact.container{:name => "contact"}
+      .row
+        %h1.centered CONTACT
+        %hr/
+        %br/
+        %br/
+        .col-lg-offset-4.col-lg-6
+          %h3 Contact Information
+          %p
+            %span.icon.icon-home
+            Jean Paul Claustres, director commerciale
+            %br/
+            %span.icon.icon-phone
+            +33 6 65 60 24 55
+            %br/
+            %span.icon.icon-envelop
+            %a{:href => "mailto:jean-paul@genidu.com"} jean-paul@genidu.com
+            %br/
+        / col
+      / row
+    / container
+    #footerwrap
+      .container
+        %p Genidu, Inc. 2014
+
+    = javascript_include_tag 'application'

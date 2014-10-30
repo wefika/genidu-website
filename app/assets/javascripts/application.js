@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require modernizr.custom
 //= require jquery_ujs
 //= require bootstrap
+//= require retina
+//= require jquery.easing.1.3
+//= require smoothscroll
+//= require jquery-func
