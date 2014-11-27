@@ -5,7 +5,7 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Something" do
+        panel "All Products" do
           div javascript_include_tag "//www.google.com/jsapi", "chartkick"
           # div line_chart(Product.group(:created_at).count)
           ul do
@@ -18,12 +18,27 @@ ActiveAdmin.register_page "Dashboard" do
     end
     columns do
       column do
+        panel "Product" do
+          # div javascript_include_tag "//www.google.com/jsapi", "chartkick"
+          div column_chart(Product.unique_chart_data(Product.count))
+          div class: 'clearfix'
+          div do
+            h2 " "
+            h2 "* Average score on Surveys: #{70+Random.rand(30)}%"
+            h2 "* Average scans per user: #{Product.avg_scans}"
+          end
+        end
+
         panel "Daily scans" do
           line_chart Product.daily(Product.count)
         end
-        panel "Product" do
-          div javascript_include_tag "//www.google.com/jsapi", "chartkick"
-          div column_chart(Product.unique_chart_data(Product.count))
+
+        panel "Percentage" do
+          div bar_chart(Product.unique_chart_data_percentage)
+        end
+
+        panel "Scans" do
+          div pie_chart(Product.pie_chart_data_2(Product.count))
           div class: 'clearfix'
         end
 

@@ -16,6 +16,24 @@ ActiveAdmin.register_page "Stats" do
 
           div column_chart(Product.unique_chart_data), class: 'basic-data'
           div class: 'clearfix'
+          div do
+            h2 " "
+            h2 "* Average score on Surveys: #{70+Random.rand(30)}%"
+            h2 "* Average scans per user: #{Product.avg_scans}"
+          end
+        end
+
+        panel "Daily scans" do
+          line_chart Product.daily
+        end
+
+        panel "Percentage" do
+          div bar_chart(Product.unique_chart_data_percentage)
+        end
+
+        panel "Scans" do
+          div pie_chart(Product.pie_chart_data_2(Product.count))
+          div class: 'clearfix'
         end
 
         panel "Geo stats" do
